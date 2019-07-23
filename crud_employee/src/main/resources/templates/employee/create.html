@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://wwww.thymeleaf.org"
+      xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+</head>
+<body>
+<form action="/employees/create" method="post" th:object="${employees}">
+    <div>
+        <form>
+            <input type="text" placeholder="Tên Nhân Viên" th:value="${name}">
+            <input type="submit" placeholder="Tìm Kiếm">
+        </form>
+        <h2>Quản Lý Nhân Viên</h2>
+    </div>
+
+    <p>
+        <th:block th:if="${message}">
+    <p th:text="${message}"></p>
+
+    <table border="1">
+        <tr>
+            <th>Mã Nhân Viên</th>
+            <th>Nhóm Nhân Viên</th>
+            <th>Họ Tên</th>
+            <th>Giới Tính</th>
+            <th>Số Điện Thoại</th>
+            <th>Thông Tin</th>
+            <th>Sửa</th>
+            <th>Xóa</th>
+        </tr>
+        <th:block th:each="employee : ${employees}">
+            <tr>
+                <td th:text="${employee.}"></td>
+            </tr>
+        </th:block>
+    </table>
+
+    </th:block>
+    </p>
+</form>
+</body>
+</html>
